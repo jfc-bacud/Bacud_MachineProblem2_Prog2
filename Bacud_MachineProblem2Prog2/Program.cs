@@ -404,24 +404,28 @@ namespace Bacud_MachineProblem2Prog2
 
                         input2b = int.Parse(Console.ReadLine());
 
-                        int[,] dimensions2 = new int[input1b, input2b];
+             
 
-                        // GENERATING NUMBERS IN THE MATRIX
-
-                        for (int x = 0; x < dimensions2.GetLength(0); x++) 
-                        {
-                            for (int y = 0; y < dimensions2.GetLength(1); y++)
-                            {
-                                dimensions2[x, y] = rnd.Next(1, 11);
-                            }
-                        }
-
+                      
                         // CHECKING IF CONDITIONS FROM NOTE ARE FULLFILLED
 
-                        if (input1b == input2 && input2b == input1)
+                        if (input1b == input2)
                         {
+
+                            // THIRD ARRAY
+
+                            int[,] dimensions2 = new int[input1b, input2b];
+
                             Console.WriteLine("\nGenerating 2nd " + input1b + " x " + input2b + " matrix...");
                             Console.WriteLine();
+
+                            for (int x = 0; x < dimensions2.GetLength(0); x++)
+                            {
+                                for (int y = 0; y < dimensions2.GetLength(1); y++)
+                                {
+                                    dimensions2[x, y] = rnd.Next(1, 11);
+                                }
+                            }
 
                             // DISPLAY OF SECOND MATRIX
 
@@ -503,7 +507,7 @@ namespace Bacud_MachineProblem2Prog2
                 while (true) // INQUIRY MESSAGE IF USER WANTS TO TRY AGAIN
                 {
                     Console.Clear();
-                    Console.WriteLine("\nDo you wish to do another operation?");
+                    Console.WriteLine("Do you wish to do another operation?");
                     Console.Write("[1] Yes\n[2] No");
 
                     Console.Write("\n\nInput: ");
